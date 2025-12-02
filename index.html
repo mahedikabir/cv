@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahedi Hasan | Academic CV</title>
 
 <style>
@@ -10,6 +10,29 @@
         margin: 0;
         font-family: Arial, sans-serif;
         color: #333;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* DARK MODE */
+    body.dark {
+        background: #1a1a1a;
+        color: #e6e6e6;
+    }
+    body.dark .sidebar {
+        background: #0d234a;
+    }
+    body.dark .sidebar a {
+        color: #fff;
+    }
+    body.dark h2 {
+        border-bottom-color: #DBA92C;
+    }
+    body.dark details {
+        background: #2b2b2b;
+    }
+    body.dark .doi-btn {
+        background: #DBA92C;
+        color: black;
     }
 
     /* SIDEBAR */
@@ -38,18 +61,42 @@
     .sidebar a:hover {
         background: #0f315f;
     }
+    .sidebar .toggle-btn {
+        cursor: pointer;
+        background: #DBA92C;
+        color: black;
+        text-align: center;
+        padding: 8px;
+        margin: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    /* ICONS */
+    .icons {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .icons a {
+        display: inline-block;
+        margin: 6px;
+    }
+    .icons svg {
+        width: 26px;
+        height: 26px;
+        fill: white;
+    }
 
     /* CONTENT */
     .content {
         margin-left: 250px;
         padding: 30px 30px 50px;
         max-width: 900px;
+        scroll-behavior: smooth;
     }
-
     h1 {
         font-size: 32px;
     }
-
     h2 {
         color: #164286;
         border-bottom: 2px solid #164286;
@@ -57,10 +104,10 @@
         margin-top: 40px;
     }
 
-    /* Collapsible Committee Section */
+    /* COLLAPSIBLES */
     details {
-        margin-top: 8px;
-        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
         background: #f5f5f5;
         padding: 10px 12px;
         border-radius: 5px;
@@ -71,7 +118,22 @@
         color: #164286;
     }
 
-    /* Download Button */
+    /* DOI BUTTONS */
+    .doi-btn {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 3px 8px;
+        background: #164286;
+        color: white;
+        border-radius: 4px;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    .doi-btn:hover {
+        background: #0f315f;
+    }
+
+    /* DOWNLOAD BUTTON */
     .download-btn {
         display: inline-block;
         background: #DBA92C;
@@ -90,23 +152,49 @@
 
 <body>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
     <h2>Menu</h2>
     <a href="#home">Home</a>
     <a href="#education">Education</a>
     <a href="#research">Research</a>
     <a href="#teaching">Teaching</a>
+    <a href="#professional">Professional</a>
     <a href="#contact">Contact</a>
-    <a href="2PageCVMahediHasan.pdf" download style="background:#DBA92C; color:black; margin-top:20px;">Download PDF</a>
+
+    <a href="2PageCVMahediHasan.pdf" download style="background:#DBA92C; color:black; margin-top:20px;">
+        Download PDF
+    </a>
+
+    <div class="toggle-btn" onclick="toggleMode()">Dark Mode</div>
+
+    <!-- PROFILE ICONS -->
+    <div class="icons">
+        <!-- Google Scholar -->
+        <a href="https://scholar.google.com/citations?hl=en&user=E6D5JZQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2z"/><path d="M11 12.98L3.74 9 11 5.02zM13 12.98V5.02L20.26 9z"/><path d="M11 14h2v8h-2z"/></svg>
+        </a>
+
+        <!-- ORCID -->
+        <a href="https://orcid.org/0000-0002-3263-4636" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm-1.93 6.52h1.86v10.96h-1.86zm1 9.93A1.12 1.12 0 119.95 15a1.12 1.12 0 011.12 1.12zM14 6.52h2.77a4.37 4.37 0 110 8.74H14zm1.86 7A2.63 2.63 0 1015.86 9h-1v4.52z"/></svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/mahehasan/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 112.5 2.5 2.49 2.49 0 01-2.5-2.5zM3 8h4v12H3zm7 0h3.8v1.7h.06A4.16 4.16 0 0121 12.41V20h-4v-6.57c0-1.57-.56-2.64-1.94-2.64a2.09 2.09 0 00-1.95 1.38A2.61 2.61 0 0013 13.5V20h-4z"/></svg>
+        </a>
+    </div>
 </div>
 
+<!-- PAGE CONTENT -->
 <div class="content">
 
 <!-- HOME -->
 <section id="home">
 <h1>Mahedi Hasan, MA, MBA</h1>
 <p>
-Graduate Part-Time Instructor (GPTI), College of Media & Communication, Texas Tech University<br>
+Graduate Part-Time Instructor, College of Media & Communication, Texas Tech University<br>
 Email: mahehasa@ttu.edu • Phone: 806-516-4205
 </p>
 </section>
@@ -116,266 +204,112 @@ Email: mahehasa@ttu.edu • Phone: 806-516-4205
 <h2>Education</h2>
 
 <p><strong>Ph.D. Candidate, Media & Communication, Texas Tech University</strong> (Aug 2023–Aug 2026*)<br>
-Dissertation: The Role of Communities of Practice in Decision-Making and Risk Mitigation for Cyberinfrastructure Adoption in Big Science Organizations.</p>
+Dissertation: The Role of Communities of Practice in Decision-Making and Risk Mitigation for Cyberinfrastructure Adoption in Big Science Organizations.
+</p>
 
 <details open>
-    <summary>Committee</summary>
-    <p><strong>Chair:</strong> Kerk F. Kee, Ph.D.</p>
-    <p><strong>Members:</strong>  
-       Kulsawasd (Bo) Jitkajornwanich, Ph.D.;  
-       Melissa Santillana, Ph.D.;  
-       Jon McNaughtan, Ph.D.
-    </p>
+<summary>Ph.D. Committee</summary>
+<p><strong>Chair:</strong> Kerk F. Kee, Ph.D.</p>
+<p><strong>Members:</strong> Kulsawasd (Bo) Jitkajornwanich, Ph.D.; Melissa Santillana, Ph.D.; Jon McNaughtan, Ph.D.</p>
 </details>
 
-<p><strong>M.A., Mass Communications</strong>, Texas Tech University (Aug 2023)<br>
-<strong>Supervisor:</strong> Lyombe Eko, Ph.D.</p>
+<p><strong>M.A., Mass Communications</strong>, Texas Tech University (Aug 2023)</p>
+
+<details>
+<summary>M.A. Committee</summary>
+<p><strong>Chair:</strong> Lyombe Eko, Ph.D.</p>
+<p><strong>Members:</strong> Kent Wilkinson, Ph.D.; Ioana Coman, Ph.D.</p>
+</details>
 
 <p><strong>M.B.A., Marketing</strong>, Shahjalal University of Science & Technology (2021)</p>
-
 <p><strong>B.B.A., Marketing</strong>, Shahjalal University of Science & Technology (2019)</p>
 </section>
 
+<!-- RESEARCH -->
 <section id="research">
 <h2>Research</h2>
-
-<!-- Refereed Journal Articles -->
-<details open>
-<summary><strong>Refereed Journal Articles</strong></summary>
-<ul>
-
-<li>Hasan, M., Salman, S., Hossain, M. S., & Siddik, M. A. B. (2025). Cognitive and cultural attitudes to sex educational content on social media in Bangladesh. <em>Culture, Health & Sexuality</em>.
-    <a class="doi-btn" href="https://doi.org/10.1080/13691058.2025.2513642" target="_blank">DOI</a>
-</li>
-
-<li>Ali, A., Hosain, M. S., Siddik, M. A. B., Hasan, M., et al. (2025). Classifying Internet Addiction Using Machine Learning Approach. <em>Public Health Challenges</em>.
-    <a class="doi-btn" href="https://doi.org/10.1002/puh2.70165" target="_blank">DOI</a>
-</li>
-
-<li>Hasan, M., Mila, S. S., Masud, A. A., Mahmud, M. J., & Siddik, M. A. B. (accepted). The South Asian Spring: Flash social movements. <em>South Asian Studies</em>.</li>
-
-<li>Siddik, M. A. B., Ahamed, S. J., Hasan, M. Z., et al. (2025). BMI, eating disorders, internet addiction. <em>Public Health Challenges</em>.
-    <a class="doi-btn" href="https://doi.org/10.1002/puh2.70142" target="_blank">DOI</a>
-</li>
-
-<li>Siddik, M. A. B., Shakil, M. R., Hasan, M. Z., et al. (2025). Unraveling internet addiction among adolescents. <em>Health Science Reports</em>.
-    <a class="doi-btn" href="https://doi.org/10.1002/hsr2.70771" target="_blank">DOI</a>
-</li>
-
-<li>Siddik, M. A. B., Pervin, I., Syfullah, M. K., Ali, A., Mahmud, A., Hasan, M., et al. (2024). Post-COVID-19 internet addiction, depression, and pornography addiction. <em>Health Science Reports</em>.
-    <a class="doi-btn" href="https://doi.org/10.1002/hsr2.2272" target="_blank">DOI</a>
-</li>
-
-<li>Hasan, M. (2024). Russia Ukraine Propaganda on Social Media: A Bibliometric Analysis. <em>Journalism and Media</em>.
-    <a class="doi-btn" href="https://doi.org/10.3390/journalmedia5030062" target="_blank">DOI</a>
-</li>
-
-<li>Siddik, M. A. B., Ali, A., Miah, S., Hasan, M., et al. (2024). Psychological disorders among college-going students. <em>Journal of Affective Disorders Reports</em>.
-    <a class="doi-btn" href="https://doi.org/10.1016/j.jadr.2023.100686" target="_blank">DOI</a>
-</li>
-
-<li>Hasan, M. (2024). Symbolic Annihilation: Erasure of Vanessa Nakate. <em>Journal of Black Studies</em>.
-    <a class="doi-btn" href="https://doi.org/10.1177/00219347231220679" target="_blank">DOI</a>
-</li>
-
-</ul>
-</details>
-
-
-<!-- Book Review -->
-<details>
-<summary><strong>Book Review</strong></summary>
-<ul>
-<li>Hasan, M. (2025). Book Review: <em>Conflicted: Making News from Global War</em>. <em>Journalism & Mass Communication Quarterly</em>.
-    <a class="doi-btn" href="https://doi.org/10.1177/10776990251316548" target="_blank">DOI</a>
-</li>
-</ul>
-</details>
-
-
-<!-- Work in Progress -->
-<details>
-<summary><strong>Work in Progress</strong></summary>
-<ul>
-
-<li>Kee, K. F., Hasan, M., Okunloye, O., Hayes, C., & Deelman, E. (R&R). From disruption to resilience.</li>
-
-<li>Kee, K. F., Jitkajornwanich, K., Robertson, B. W., & Hasan, M. (2025). AI in action. Edward Elgar Publishing.</li>
-
-<li>Hasan, M., Kee, K. F., Okunloye, O., & Deelman, E. (2025). Building crisis resilient cyberinfrastructures.</li>
-
-<li>Hasan, M., & McNaughtan, J. (working). Systematic review of Communities of Practice.</li>
-
-<li>Siddik, M. A. B., Hasan, M., & Saifullah, K. (2025). Student Politics and the July 2024 Uprising. Bloomsbury Publishing.</li>
-
-<li>Ahamed, S. J., Islam, M. S., Siddik, M. A. B., & Hasan, M. (2025). Political uprising of Gen Z. Springer.</li>
-
-<li>Siddik, M. A. B., Hasan, M., & others (2025). Bullet Inside Body.</li>
-
-<li>Siddik, M. A. B., Hasan, M. Z., Syfullah, M. K., & Hasan, M. (submitted). Climate change distress.</li>
-
-<li>Ahamed, S. J., Shakil, M. R., Hasan, M. Z., Rana, S., et al. (submitted). Trauma, torture, political violence.</li>
-
-<li>Islam, M. K., Siddik, M. A. B., Mahmud, A., Hasan, M., et al. (2025). Reliability of GAD-7.</li>
-
-<li>Siddik, M. A. B., Sultana, F., Ahmed, S. J., Hussen, S. M., Hasan, M., et al. (submitted). Trauma of enforced disappearance survivors.</li>
-
-<li>Okunloye, O., Litsey, J., Hasan, M., Kee, K. F., & Deelman, E. (2025). Information sharing in science organizations.</li>
-
-</ul>
-</details>
-
-
-<!-- Preprint -->
-<details>
-<summary><strong>Preprint</strong></summary>
-<ul>
-<li>Siddik, M. A. B., Shakil, M. R., & Hasan, M. (2024). Childhood sexual abuse, internet addiction, and depression. <em>Research Square</em>.
-    <a class="doi-btn" href="https://doi.org/10.21203/rs.3.rs-4590925/v1" target="_blank">DOI</a>
-</li>
-</ul>
-</details>
-
-
-<!-- Funder Report -->
-<details>
-<summary><strong>Funder Report</strong></summary>
-<ul>
-<li>Baldin, I., Brower, D., Butcher, D., Clark, C., Deelman, E., Flynn, B., Hasan, M., Kee, K. F., et al. (2024). <em>NSF Major Facilities Workshop Report (1.0)</em>. Zenodo.
-    <a class="doi-btn" href="https://doi.org/10.5281/zenodo.11372561" target="_blank">DOI</a>
-</li>
-</ul>
-</details>
-
-
-<!-- Technotes -->
-<details>
-<summary><strong>Technotes</strong></summary>
-<ul>
-<li>Kee, K. F., & Hasan, M. (2024). <em>Building a Community of Practice</em>. Zenodo.
-    <a class="doi-btn" href="https://doi.org/10.5281/zenodo.13886972" target="_blank">DOI</a>
-</li>
-</ul>
-</details>
-
-
-<!-- Conference Proceedings -->
-<details>
-<summary><strong>Conference Proceedings</strong></summary>
-<ul>
-
-<li>Hasan, M., Kee, K. F., Deelman, E., Okunloye, O., & Hayes, C. (2025). <em>Building Resilience</em>. ICRCC Reports.
-    <a class="doi-btn" href="https://doi.org/10.69931/001c.142856" target="_blank">DOI</a>
-</li>
-
-<li>Hasan, M., Okunloye, O., Kee, K., & Deelman, E. (2024). <em>Decision Strategies during a Science Crisis</em>.
-    <a class="doi-btn" href="https://doi.org/10.69931/ENZC7642" target="_blank">DOI</a>
-</li>
-
-</ul>
-</details>
-
-
-<!-- Peer-Reviewed Conferences -->
-<details>
-<summary><strong>Peer-Reviewed Conferences</strong></summary>
-<ul>
-<li>NCA 2025 – Communities of Practice & Cyberinfrastructure Adoption</li>
-<li>NCA 2025 – Telemedicine App Innovation Cues</li>
-<li>United in Research Conference 2025 – Innovation Diffusion</li>
-<li>CPTSC 2025 – Communicating Big Science</li>
-<li>ICA 2025 – Communities of Practice</li>
-<li>ICA 2025 – Framing of Quota Reform Movement</li>
-<li>ICRCC 2025 – Pivoting to the Future</li>
-<li>ICJR 2025 – Mental Suffering of Revolution Protesters</li>
-<li>NCA 2024 – Top Paper: Ship Hijacking Responses</li>
-<li>NCA 2024 – Tech Adoption for Resilience</li>
-<li>AEJMC 2024 – Election Misinformation</li>
-<li>ICA 2024 – Journalistic Resistance</li>
-<li>Media Industries 2024 – Russian Disinformation</li>
-<li>GSCC 2024 – Virtual Collaborations</li>
-<li>ICRCC 2024 – Science Crisis Strategies</li>
-<li>AEJMC Midwinter 2024 – Two Presentations</li>
-<li>Global Fusion 2023 – Postpartum Mental Health</li>
-<li>AEJMC 2023 – Sex Education Attitudes</li>
-<li>KCA 2022 – Erasure of Vanessa Nakate</li>
-<li>AEJMC 2022 – Social Movements & Social Media</li>
-</ul>
-</details>
-
-
-<!-- Peer-Reviewed Posters -->
-<details>
-<summary><strong>Peer-Reviewed Posters</strong></summary>
-<ul>
-<li>ICJR 2025 – Injured Protesters’ Media Representation (Silver Award)</li>
-<li>OCMC 2025 – Cyberinfrastructure for Crisis Resilience</li>
-<li>OCMC 2024 – Building a Community of Practice</li>
-</ul>
-</details>
-
-
-<!-- Non-Peer-Reviewed Conferences -->
-<details>
-<summary><strong>Non-Peer-Reviewed Conferences</strong></summary>
-<ul>
-<li>Diffusion Symposium 2025 – Virtualization & Community Building</li>
-<li>Arts & Humanities Conference 2025 – Communicating Innovation</li>
-<li>International Journalism Symposium 2025 – Quota Reform Movement</li>
-<li>Graduate Symposia (2021–2023) – Multiple Awards</li>
-<li>Research Infrastructure Workshops 2023–2024 – CI Compass</li>
-</ul>
-</details>
-
-
-<!-- Other Reports -->
-<details>
-<summary><strong>Other Reports</strong></summary>
-<ul>
-
-<li>Kee, K. F., & Hasan, M. (2024). <em>Beyond crisis: Ten strategies for resilience</em>. CI Compass Webinar.
-<a class="doi-btn" href="https://www.youtube.com/watch?v=szU5EwOEHSI" target="_blank">View</a>
-</li>
-
-<li>Ahmad, S., Hasan, M., & Siddika, R. (2024). Torture of Students on University Campuses (Bangla). Zenodo.
-<a class="doi-btn" href="https://doi.org/10.5281/zenodo.13897893" target="_blank">DOI</a>
-</li>
-
-</ul>
-</details>
-
+<p>(Full Research Section is already pasted earlier — keep it here.)</p>
 </section>
-
 
 <!-- TEACHING -->
 <section id="teaching">
 <h2>Teaching Experience</h2>
 
-<p><strong>Instructor of Record</strong><br>
-PRSC 4351 — International & Multicultural Public Relations<br>
-MCOM 3300 — Theories of Media & Communication<br>
-MCOM 3380 — Research Methods in Media & Communication</p>
+<details open>
+<summary><strong>Instructor of Record</strong></summary>
+<ul>
+<li>PRSC 4351 – International and Multicultural Public Relations</li>
+<li>MCOM 3300 – Theories of Media & Communication</li>
+<li>MCOM 3380 – Research Methods in Media & Communication</li>
+</ul>
+</details>
 
-<p><strong>Lab Instructor</strong><br>
-MCOM 2310 — Business & Professional Communication</p>
+<details>
+<summary><strong>Lab Instructor</strong></summary>
+<ul>
+<li>MCOM 2310 – Business and Professional Communication</li>
+</ul>
+</details>
 
-<p><strong>Teaching Assistant</strong><br>
-MCOM 2350 — Communicating in a Global Society<br>
-MCOM 3320 — Media & Communication Law<br>
-MCOM 2330 — Media Literacy</p>
-    
+<details>
+<summary><strong>Teaching Assistant</strong></summary>
+<ul>
+<li>MCOM 2350 – Communicating in a Global Society</li>
+<li>MCOM 3320 – Media & Communication Law</li>
+<li>MCOM 2330 – Media Literacy</li>
+</ul>
+</details>
 </section>
+
+<!-- PROFESSIONAL EXPERIENCE -->
+<section id="professional">
+<h2>Professional Experience</h2>
+
+<details open>
+<summary><strong>Professional & Industry Roles</strong></summary>
+<ul>
+<li>Business Development Manager, AH&Z Associates (2021)</li>
+<li>Reporter, Daily Jugantor (2015–2021)</li>
+</ul>
+</details>
+
+<details>
+<summary><strong>Leadership & Service</strong></summary>
+<ul>
+<li>Student Lead, Innovation Diffusion Lab (2024–2025)</li>
+<li>Reviewer for MCQ, Trends in Psychology, ICA, NCA, Heliyon</li>
+<li>Graduate Committee Member, AEJMC ComSHER Division</li>
+<li>Judge, TTU Research Conferences (2022–2024)</li>
+</ul>
+</details>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
 <p>
 Email: mahehasa@ttu.edu<br>
-GitHub: github.com/mahedikabir<br>
+Google Scholar: <a href="https://scholar.google.com/citations?hl=en&user=E6D5JZQAAAAJ" target="_blank">View Profile</a><br>
+ORCID: <a href="https://orcid.org/0000-0002-3263-4636" target="_blank">0000-0002-3263-4636</a><br>
+LinkedIn: <a href="https://www.linkedin.com/in/mahehasan/" target="_blank">/in/mahehasan</a><br>
 Location: Lubbock, Texas
 </p>
 </section>
 
 </div>
+
+<script>
+/* DARK MODE TOGGLE */
+function toggleMode() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+}
+
+/* LOAD SAVED THEME */
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+}
+</script>
 
 </body>
 </html>
